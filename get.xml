@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+  <meta>
+  <author>H</author>
+  <description>HTML</description>
+  <sampleQuery></sampleQuery>
+  <documentationURL>http://www.yahoo.com/</documentationURL>
+  </meta>
+  <bindings>
+    <select itemPath="" produces="XML">
+    <urls>
+      <url>{url}</url>
+    </urls>
+    <inputs>
+      <key id="url" type="xs:string" required="true" paramType="variable"/>
+      <key id="xpath" type="xs:string" required="true" paramType="variable"/>
+    </inputs>
+    <execute>
+    <![CDATA[
+      var req = y.rest(url);  
+      req.header('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36');
+      req.header('Cookie','x-wl-uid=18ENGsGzd/rOtMMJE9WaAKfDMOhWOfAQS9z9poAdl3wS7Cqni3ebr6UfqWbLYoaYFDxAq1TV6PmA=; session-token=vlu6skJpFcVtdZQcEWwvF2lgBjk0ylHxArFqzQBVO5LHBJ8uYoSW0+H50jUsH0eCQM40tu4bJvKaX9Z4Uozc0Iupb3AP+0fbI3f3fhWw2oh5snEaU2ZywU5NzJni4ZQxyHFBJxRqtDMLr4xTOXQGZpWUBYyEbY6PK0bIPdEHXTKS34R7NqdPwFdxtYnmxEb2w+j80kiWAKxYWdDKMauhmP6ATpmwwPWVoOLch2xpn2WOPfnx6hFDcA==; lc-acbin=en_IN; session-id-time=2082758401l; session-id=254-5749477-6709106; ubid-acbin=254-7656756-5364116; csm-hit=1T3ZF2N346N10D98NXQR+s-11NTJEJYSMCGR3S5CBSV|1488485180644');
+      var data = myRequest.accept("text/html").contentType("application/x-www-form-urlencoded; charset=UTF-8").get().response;
+      //var mdata = "<html><head></head><body>"+data+"</body></html>";
+      //var ndata = JSON.parse(data);
+      //var xmldata = y.jsonToXml(data);
+      //var tdata = y.tidy(data);
+      //var xdata = y.xpath(tdata,xpath);
+      response.object = <postresult>{data}</postresult>;
+    ]]>
+    </execute>
+  </select> 
+  </bindings>
+</table>

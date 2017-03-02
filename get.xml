@@ -22,8 +22,8 @@
       //var mdata = "<html><head></head><body>"+data+"</body></html>";
       //var ndata = JSON.parse(data);
       //var xmldata = y.jsonToXml(data);
-      //var tdata = y.tidy(data);
-      var xdata = y.xpath(data,xpath);
+      var tdata = y.tidy(data);
+      var xdata = y.xpath(tdata,xpath);
       //var jsondata = y.jsToString(y.xmlToJson(xdata));
       response.object = xdata;
     ]]>

@@ -25,7 +25,7 @@
       var tdata = y.tidy(data);
       var xdata = y.xpath(tdata,xpath);
       //var jsondata = y.jsToString(y.xmlToJson(xdata));
-      response.object = xdata;
+      response.object = <postres>xdata</postres>;
     ]]>
     </execute>
   </select> 
